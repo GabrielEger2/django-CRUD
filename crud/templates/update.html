@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update User</title>
+</head>
+<body>
+    <h1>{{ user.id }} -- {{ user.name  }}</h1>
+
+    <form action="{% url 'update' user.id %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="name" value="{{ user.name }}">
+        <button type="submit">Update User</button>
+    </form>
+</body>
+</html>
